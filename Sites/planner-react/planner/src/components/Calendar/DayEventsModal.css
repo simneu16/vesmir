@@ -1,0 +1,110 @@
+.day-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1500;
+  padding: 1rem;
+}
+
+.day-modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.day-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+.day-modal-header h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.25rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.day-modal-body {
+  padding: 1.5rem;
+}
+
+.day-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.no-events {
+  text-align: center;
+  color: #6b7280;
+  padding: 3rem 2rem;
+  font-size: 1rem;
+}
+
+/* Mobile: Show cards below calendar instead of modal */
+@media (max-width: 768px) {
+  .day-modal-overlay {
+    position: relative;
+    background: transparent;
+    padding: 0;
+    display: block;
+  }
+
+  .day-modal-content {
+    max-width: 100%;
+    max-height: none;
+    box-shadow: none;
+    margin-top: 1rem;
+    border-radius: 8px;
+  }
+
+  .day-modal-header {
+    position: static;
+    padding: 1rem;
+  }
+
+  .day-modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .day-modal-body {
+    padding: 1rem;
+  }
+}
